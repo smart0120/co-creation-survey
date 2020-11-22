@@ -8,4 +8,5 @@ urlpatterns = [
     path('step3/', views.StepThirdView.as_view(), name='step3'),
     path('step4/', views.StepFourthView.as_view(), name='step4'),
     path('step5/', views.StepFifthView.as_view(), name='step5'),
+    path('success/', views.SuccessView.as_view(), name='success'),
 ]

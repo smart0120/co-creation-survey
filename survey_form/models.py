@@ -12,16 +12,16 @@ class BusinessCreator(models.Model):
 
 class SecondStep(models.Model):
     MARKET_CHOICES = [
-        (1, 'Products'),
-        (2, 'Services'),
+        (1, 'Productos'),
+        (2, 'Servicios'),
     ]
     CLASSIFICATION_CHOICES = [
-        (1, 'Freelancer: I am a specialist in doing something and that is what I want to offer without the need to perform tasks in the different areas related to a company'),
-        (2, 'Self-employment: the daily operation of my business will depend mainly on my working'),
-        (3, 'Micro-company: I want to create a company that generates value through hired collaborators and my daily work (up to 10 employees)'),
-        (4, 'Company: I want to create a company that generates value mainly through hired collaborators (more than 10 employees)'),
-        (5, 'Company in need of investments: I want to create a company with investment partners because it requires (or required) a lot of capital'),
-        (6, 'Other:')
+        (1, 'Freelancer: soy especialista en hacer algo y eso es lo quiero ofrecer sin la necesidad de realizar tareas de las diferentes áreas relacionadas con una empresa'),
+        (2, 'Autoempleo: la operación diaria de mi negocio dependerá principalmente de que yo trabaje'),
+        (3, 'Microempresa: quiero crear una empresa que genere valor a través de colaboradores contratados y mi trabajo diario (hasta 10 empleados)'),
+        (4, 'Empresa: quiero crear una empresa que genere valor principalmente a través de colaboradores contratados (más de 10 empleados)'),
+        (5, 'Empresa con necesidad de inversiones: quiero crear una empresa con socios inversionistas porque requiere (o requirió) mucho capital'),
+        (6, 'Outro:')
     ]
     TIME_SPEND_CHOICE = [
         (1, 1),
@@ -47,17 +47,17 @@ class SecondStep(models.Model):
 
 class ThirdStep(models.Model):
     TRAIT_CHOICES = [
-        (1, 'Strongly disagree'),
-        (2, 'In disagreement'),
+        (1, 'Totalmente en desacuerdo'),
+        (2, 'En desacuerdo'),
         (3, 'Neutral'),
-        (4, 'Agree'),
-        (5, 'Totally agree'),
+        (4, 'De acuerdo'),
+        (5, 'Totalmente de acuerdo'),
     ]
     MOTIVATE_CHOICES = [
-        (1, 'This is the reason why I undertake.'),
-        (2, 'Secondary. I also want to achieve this.'),
-        (3, 'I would like if it happened, but it is not essential.'),
-        (4, 'It does not matter to me'),
+        (1, 'Esta es la razón por la que emprendo.'),
+        (2, 'Secundario. También quiero lograr esto.'),
+        (3, 'Me gustaría si pasara, pero no es indispensable.'),
+        (4, 'Me es indiferente'),
     ]
     PRIORITY_CHOICES = [
         (1, 1),
@@ -164,9 +164,9 @@ class FourthStep(models.Model):
 
 class FifthStep(models.Model):
     GENDER_CHOICES = [
-        (1, 'Man'),
-        (2, 'Woman'),
-        (3, 'I prefer not to specify'),
+        (1, 'Hombre'),
+        (2, 'Mujer'),
+        (3, 'Prefiero no especificar'),
     ]
     co_creator = models.OneToOneField(BusinessCreator, on_delete=models.CASCADE)
     full_name = models.TextField()

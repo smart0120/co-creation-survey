@@ -1,8 +1,7 @@
 {% extends "index.html" %}
-
-{% block form %}
 {% load crispy_forms_tags %}
 
+{% block form %}
 <div class="container">
 	<div class="block-content mt-2 mb-3">
 		<div class="block-header"></div>
@@ -29,11 +28,6 @@
 			</div>
 		</div>
 	</div>
-	<form action="" method="post">
-		{% csrf_token %}
-	    {{ form|crispy }}
-	    <a href="{% url 'step2' %}" class="btn button">Voltar</a>
-	    <input type="submit" class="btn button" value="Próxima">
-	</form>
+	{% crispy form %}
 </div>
 {% endblock %}

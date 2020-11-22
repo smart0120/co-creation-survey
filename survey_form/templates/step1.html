@@ -19,14 +19,6 @@
 			</div>
 		</div>
 	</div>
-	<form action="" method="post">
-		<div class="block-content mb-3">
-			<div class="block-body pt-4">
-				{% csrf_token %}
-			    {{ form|crispy }}
-			</div>
-		</div>
-	    <input type="submit" class="btn button" value="Próxima">
-	</form>
+	{% crispy form %}
 </div>
 {% endblock %}
