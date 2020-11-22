@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+{% block form %}
+<div class="container">
+	<div class="block-content mt-2 mb-3">
+		<div class="block-header"></div>
+		<div class="block-body">
+			<h1 class="block-title">
+				Evaluación Inicial: Cocreando tu emprendimiento
+			</h1>
+			<div class="block-description">
+				Bienvenido al programa Cocreando tu emprendimiento con Devas.
+				<div class="my-4">
+					Mi objetivo es crear para ti un itinerario de aprendizaje y definir acciones a seguir que sean totalmente personalizadas. Para lograr esto es importante considerar el tipo de emprendimiento, el momento en el que se encuentra, los objetivos que buscas y las habilidades con las que cuentas.
+				</div>
+				En esta evaluación recopilaremos esta importante información para empezar a revisarla en tu primer sesión.
+				<div class="asteriskField mt-3">*Obrigatório</div>
+			</div>
+		</div>
+	</div>
+	<form action="" method="post">
+		<div class="block-content mb-3">
+			<div class="block-body pt-4">
+				{% csrf_token %}
+			    {{ form|crispy }}
+			</div>
+		</div>
+	    <input type="submit" class="btn button" value="Próxima">
+	</form>
+</div>
+{% endblock %}

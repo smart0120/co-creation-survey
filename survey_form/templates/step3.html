@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block form %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+	<div class="block-content mt-2 mb-3">
+		<div class="block-header"></div>
+		<div class="block-body">
+			<h1 class="block-title">
+				Evaluación Inicial: Cocreando tu emprendimiento
+			</h1>
+			<div class="block-description">
+				<div class="asteriskField mt-3">*Obrigatório</div>
+			</div>
+		</div>
+	</div>
+	<div class="block-content mb-3">
+		<div class="block-header">
+			<div class="header-title">Sobre ti como emprendedor</div>
+		</div>
+		<div class="block-body">
+			<div class="block-description pt-2 font-size-12px">
+				Emprender exitosamente no solamente implica trabajar en tu proyecto, también es necesario que desarrolles tus  conocimiento y habilidades como emprendedor.
+				<div class="my-4">
+					Con la evaluación de personalidad Big 5 tendré información para identificar qué vale la pena trabajar contigo como emprendedor y así incrementar las probabilidades de éxito. La personalidad no es algo fijo ni está predefinida, podemos trabajar en desarrollar nuestros rasgos de personalidad y hasta podemos llegar a tener la capacidad de actuar con cierta "personalidad" dependiendo de la situación según sea más conveniente para nosotros.
+				</div>
+				También es importante considerar cuál es la manera con la que aprendes mejor, tus áreas de conocimiento y el objetivo que tienes al emprender para poder personalizar mejor tu experiencia de aprendizaje.
+			</div>
+		</div>
+	</div>
+	<form action="" method="post">
+		<div class="block-content mb-2">
+			<div class="block-body pt-4">
+				{% csrf_token %}
+			    {{ form|crispy }}
+			</div>
+		</div>
+	    <a href="{% url 'step2' %}" class="btn button">Voltar</a>
+	    <input type="submit" class="btn button" value="Próxima">
+	</form>
+</div>
+{% endblock %}

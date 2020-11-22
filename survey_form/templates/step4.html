@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block form %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+	<div class="block-content mt-2 mb-3">
+		<div class="block-header"></div>
+		<div class="block-body">
+			<h1 class="block-title">
+				Evaluación Inicial: Cocreando tu emprendimiento
+			</h1>
+			<div class="block-description">
+				<div class="asteriskField mt-3">*Obrigatório</div>
+			</div>
+		</div>
+	</div>
+	<div class="block-content mb-3">
+		<div class="block-header">
+			<div class="header-title">A donde quieres llegar</div>
+		</div>
+		<div class="block-body">
+			<div class="block-description pt-2 font-size-12px">
+				Para poder medir tu avance y el éxito de este programa es importante definir cuáles son tus objetivos y los indicadores de avance.<br>
+				Ten en cuenta que un objetivo bien planteado debe de ser SMART, es decir tener las siguientes características:<br>
+   				&nbsp;&nbsp;&nbsp;Specific: debe ser algo específico y concreto<br>
+				&nbsp;&nbsp;&nbsp;Measurable: medible de preferencia con indicadores numéricos<br>
+				&nbsp;&nbsp;&nbsp;Attainable: algo alcanzable<br>
+				&nbsp;&nbsp;&nbsp;Relevant: debe ser importante para tu objetivo final de largo plazo y/o tu misión<br>
+				&nbsp;&nbsp;&nbsp;Time based: debe tener una fecha de cumplimiento
+			</div>
+		</div>
+	</div>
+	<form action="" method="post">
+		<div class="block-content mb-2">
+			<div class="block-body pt-4">
+				{% csrf_token %}
+			    {{ form|crispy }}
+			</div>
+		</div>
+	    <a href="{% url 'step3' %}" class="btn button">Voltar</a>
+	    <input type="submit" class="btn button" value="Próxima">
+	</form>
+</div>
+{% endblock %}
