@@ -43,7 +43,7 @@ class StepFirstForm(ModelForm):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
 		self.helper.field_template = "bootstrap4/field_custom.html"
-		self.helper.form_action = ''
+		self.helper.form_action = 'step1'
 		self.helper.layout = Layout(
 			'email',
 			ButtonHolder(
@@ -85,7 +85,7 @@ class StepSecondForm(ModelForm):
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_action = ''
+		self.helper.form_action = 'step2'
 		self.helper.layout = Layout(
 			Div(
 				Div(
@@ -508,7 +508,7 @@ class StepThirdForm(ModelForm):
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_action = ''
+		self.helper.form_action = 'step3'
 		self.helper.layout = Layout(
 			Div(
 				Div(
@@ -703,7 +703,7 @@ class StepFourthForm(ModelForm):
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_action = ''
+		self.helper.form_action = 'step4'
 		self.helper.layout = Layout(
 			Div(
 				Div(
@@ -783,7 +783,7 @@ class StepFifthForm(ModelForm):
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_action = ''
+		self.helper.form_action = 'step5'
 		self.helper.field_template = 'bootstrap4/field_custom.html'
 		self.helper.layout = Layout(
 			'full_name',
