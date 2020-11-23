@@ -98,7 +98,7 @@ class StepSecondForm(ModelForm):
 			),
 			Div(
 				Div(
-					InlineRadios('time_spend'),
+					'time_spend',
 					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'

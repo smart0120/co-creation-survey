@@ -39,7 +39,7 @@ class SecondStep(models.Model):
     classification = models.IntegerField(
         choices=CLASSIFICATION_CHOICES
     )
-    classification_other_detail = models.TextField(null=True)
+    classification_other_detail = models.TextField(blank=True)
     time_spend = models.IntegerField(
         choices=TIME_SPEND_CHOICE
     )
@@ -132,7 +132,7 @@ class ThirdStep(models.Model):
     exp_legal = models.BooleanField(default=False);
     exp_other = models.BooleanField(default=False);
 
-    exp_other_detail = models.TextField(null=True)
+    exp_other_detail = models.TextField(blank=True)
 
     motivate1 = models.IntegerField(choices=MOTIVATE_CHOICES)
     motivate2 = models.IntegerField(choices=MOTIVATE_CHOICES)
