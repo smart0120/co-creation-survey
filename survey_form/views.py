@@ -134,11 +134,11 @@ class StepFourthView(FormView):
 				return None
 		return None
 
-	# def get(self, request, *args, **kwargs):
-	#     if self.request.session.get('step3', False):
-	#         self.object = self.get_object()
-	#         return self.render_to_response(self.get_context_data())
-	#     return HttpResponseRedirect('/step1/')
+	def get(self, request, *args, **kwargs):
+	    if self.request.session.get('step3', False):
+	        self.object = self.get_object()
+	        return self.render_to_response(self.get_context_data())
+	    return HttpResponseRedirect('/step1/')
 
 	def post(self, request, *args, **kwargs):
 		self.object = self.get_object()
