@@ -148,332 +148,277 @@ class StepThirdForm(ModelForm):
 	trait1 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Soy el alma de la fiesta'
 	)
 	trait2 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Siento poca preocupación por los demás'
 	)
 	trait3 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Siempre estoy preparado'
 	)
 	trait4 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me estreso fácilmente'
 	)
 	trait5 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo un amplio vocabulario'
 	)
 	trait6 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No hablo mucho'
 	)
 	trait7 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me interesan las personas'
 	)
 	trait8 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Dejo mis pertenencias cerca'
 	)
 	trait9 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Estoy relajado la mayoría del tiempo'
 	)
 	trait10 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me cuesta trabajo entender ideas abstractas'
 	)
 	trait11 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me siento cómodo rodeado de gente'
 	)
 	trait12 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Insulto a la gente'
 	)
 	trait13 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Pongo atención a los detalles'
 	)
 	trait14 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me preocupan las cosas'
 	)
 	trait15 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo una imaginación vívida'
 	)
 	trait16 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me mantengo en segundo plano'
 	)
 	trait17 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Simpatizo con los sentimiento de los demás'
 	)
 	trait18 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Hago las cosas muy grandes'
 	)
 	trait19 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Rara vez me siento triste'
 	)
 	trait20 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No estoy interesado en ideas abstractas'
 	)
 	trait21 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Comienzo conversaciones'
 	)
 	trait22 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No estoy interesado en los problemas de los demás'
 	)
 	trait23 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Hago mis pendientes en el momento'
 	)
 	trait24 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me molesto fácilmente'
 	)
 	trait25 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo ideas excelentes'
 	)
 	trait26 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo poco que decir'
 	)
 	trait27 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo un corazón suave'
 	)
 	trait28 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='A menudo olvido de poner las cosas en su lugar'
 	)
 	trait29 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me enojo fácilmente'
 	)
 	trait30 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No tengo buena imaginación'
 	)
 	trait31 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Hablo con muchas personas diferentes en las fiestas'
 	)
 	trait32 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No estoy realmente interesado en los demás'
 	)
 	trait33 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me gusta el orden'
 	)
 	trait34 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Cambio mucho de humor'
 	)
 	trait35 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Soy rápido para entender las cosas'
 	)
 	trait36 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No me gusta atraer la atención hacia mi'
 	)
 	trait37 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me tomo tiempo para los demás'
 	)
 	trait38 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Eludo mis deberes'
 	)
 	trait39 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Tengo cambios de humor frecuentes'
 	)
 	trait40 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Uso palabras rebuscadas'
 	)
 	trait41 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='No me molesta ser el centro de atención'
 	)
 	trait42 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Siento las emociones de los demás'
 	)
 	trait43 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Sigo un horario'
 	)
 	trait44 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Me irrito fácilmente'
 	)
 	trait45 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Dedico tiempo para reflexionar sobre diversos temas'
 	)
 	trait46 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Soy tranquilo cuando estoy rodeado de extraños'
 	)
 	trait47 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Hago que la gente se sienta cómoda'
 	)
 	trait48 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Soy exigente en mi trabajo'
 	)
 	trait49 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='A menudo me siento triste'
 	)
 	trait50 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
-		required=False,
 		label='Estoy lleno de ideas'
 	)
 
 	motivate1 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.MOTIVATE_CHOICES,
-		required=False,
 		label='Ganar dinero'
 	)
 	motivate2 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.MOTIVATE_CHOICES,
-		required=False,
 		label='Dedicarme a lo que me gusta'
 	)
 	motivate3 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.MOTIVATE_CHOICES,
-		required=False,
 		label='Cambiar/mejorar el mundo'
 	)
 	motivate4 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.MOTIVATE_CHOICES,
-		required=False,
 		label='Tener flexibilidad en mi vida en general'
 	)
 	motivate5 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.MOTIVATE_CHOICES,
-		required=False,
 		label='Ser reconocido como exitoso'
 	)
 
