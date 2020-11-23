@@ -9,7 +9,9 @@ from .forms import StepFirstForm, StepSecondForm, StepThirdForm, StepFourthForm,
 
 
 class StepFirstView(CreateView):
-	"""Step1 View"""
+	"""
+	Step1 View
+	"""
 	template_name = 'step1.html'
 	form_class = StepFirstForm
 	success_url = '/step2/'
@@ -34,16 +36,18 @@ class StepFirstView(CreateView):
 	def form_valid(self, form):
 		self.object = form.save()
 		self.request.session['creator_id'] = self.object.id
-		self.request.session['step1'] = True;
+		self.request.session['step1'] = True
 		return HttpResponseRedirect(self.get_success_url())
 
 	def form_invalid(self, form):
-		self.request.session['step1'] = False;
+		self.request.session['step1'] = False
 		return self.render_to_response(self.get_context_data(form=form))
 
 
 class StepSecondView(CreateView):
-	"""Step2 View"""
+	"""
+	Step2 View
+	"""
 	template_name = 'step2.html'
 	form_class = StepSecondForm
 	success_url = '/step3/'
@@ -74,15 +78,18 @@ class StepSecondView(CreateView):
 		self.object = form.save(commit=False)
 		self.object.co_creator_id = self.request.session.get('creator_id', None)
 		self.object.save()
-		self.request.session['step2'] = True;
+		self.request.session['step2'] = True
 		return HttpResponseRedirect(self.get_success_url())
 
 	def form_invalid(self, form):
-		self.request.session['step2'] = False;
+		self.request.session['step2'] = False
 		return self.render_to_response(self.get_context_data(form=form))
 
 
 class StepThirdView(FormView):
+	"""
+	Step3 View
+	"""
 	template_name = 'step3.html'
 	form_class = StepThirdForm
 	success_url = '/step4/'
@@ -113,15 +120,18 @@ class StepThirdView(FormView):
 		self.object = form.save(commit=False)
 		self.object.co_creator_id = self.request.session.get('creator_id', None)
 		self.object.save()
-		self.request.session['step3'] = True;
+		self.request.session['step3'] = True
 		return HttpResponseRedirect(self.get_success_url())
 
 	def form_invalid(self, form):
-		self.request.session['step3'] = False;
+		self.request.session['step3'] = False
 		return self.render_to_response(self.get_context_data(form=form))
 
 
 class StepFourthView(FormView):
+	"""
+	Step4 View
+	"""
 	template_name = 'step4.html'
 	form_class = StepFourthForm
 	success_url = '/step5/'
@@ -152,15 +162,18 @@ class StepFourthView(FormView):
 		self.object = form.save(commit=False)
 		self.object.co_creator_id = self.request.session.get('creator_id', None)
 		self.object.save()
-		self.request.session['step4'] = True;
+		self.request.session['step4'] = True
 		return HttpResponseRedirect(self.get_success_url())
 
 	def form_invalid(self, form):
-		self.request.session['step4'] = False;
+		self.request.session['step4'] = False
 		return self.render_to_response(self.get_context_data(form=form))
 
 
 class StepFifthView(FormView):
+	"""
+	Step5 View
+	"""
 	template_name = 'step5.html'
 	form_class = StepFifthForm
 	success_url = '/success/'
@@ -191,15 +204,18 @@ class StepFifthView(FormView):
 		self.object = form.save(commit=False)
 		self.object.co_creator_id = self.request.session.get('creator_id', None)
 		self.object.save()
-		self.request.session['step5'] = True;
+		self.request.session['step5'] = True
 		return HttpResponseRedirect(self.get_success_url())
 
 	def form_invalid(self, form):
-		self.request.session['step5'] = False;
+		self.request.session['step5'] = False
 		return self.render_to_response(self.get_context_data(form=form))
 
 
 class SuccessView(TemplateView):
+	"""
+	Thanks Page
+	"""
 	template_name = 'success.html'
 
 	def get(self, request, *args, **kwargs):
