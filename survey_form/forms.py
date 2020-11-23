@@ -12,14 +12,23 @@ Field.default_error_messages = {
 }
 
 class CustomInlineRadios(InlineRadios):
-    template = '%s/layout/custom_radioselect_inline.html'
+	"""
+	Customized bootstrap4 inline radio without label
+	"""
+	template = '%s/layout/custom_radioselect_inline.html'
 
 
 class VirticalInlineRadio(InlineRadios):
+	"""
+	Customized bootstrap4 inline radio with label above control
+	"""
 	template = '%s/layout/virtical_radioselect_inline.html'
 
 
 class StepFirstForm(ModelForm):
+	"""
+	Start form
+	"""
 	email = forms.EmailField(
 		label="Endereço de e-mail",
 		error_messages={
@@ -44,6 +53,9 @@ class StepFirstForm(ModelForm):
 
 
 class StepSecondForm(ModelForm):
+	"""
+	2nd step form
+	"""
 	market = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=SecondStep.MARKET_CHOICES,
@@ -130,6 +142,9 @@ class StepSecondForm(ModelForm):
 
 
 class StepThirdForm(ModelForm):
+	"""
+	3rd step form
+	"""
 	trait1 = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=ThirdStep.TRAIT_CHOICES,
@@ -665,6 +680,9 @@ class StepThirdForm(ModelForm):
 
 
 class StepFourthForm(ModelForm):
+	"""
+	4th step form
+	"""
 	dedicate = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=FourthStep.DEDICATE_CHOICE,
@@ -742,6 +760,9 @@ class StepFourthForm(ModelForm):
 
 
 class StepFifthForm(ModelForm):
+	"""
+	Final step form
+	"""
 	gender = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=FifthStep.GENDER_CHOICES,

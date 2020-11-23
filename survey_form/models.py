@@ -11,6 +11,9 @@ class BusinessCreator(models.Model):
 
 
 class SecondStep(models.Model):
+    """
+    Model used for 2nd Step Page
+    """
     MARKET_CHOICES = [
         (1, 'Productos'),
         (2, 'Servicios'),
@@ -46,6 +49,9 @@ class SecondStep(models.Model):
 
 
 class ThirdStep(models.Model):
+    """
+    Model used for 3rd step
+    """
     TRAIT_CHOICES = [
         (1, 'Totalmente en desacuerdo'),
         (2, 'En desacuerdo'),
@@ -147,6 +153,9 @@ class ThirdStep(models.Model):
     
 
 class FourthStep(models.Model):
+    """
+    Model used for 4th Step
+    """
     DEDICATE_CHOICE = [
         (1, 1),
         (2, 2),
@@ -163,6 +172,9 @@ class FourthStep(models.Model):
 
 
 class FifthStep(models.Model):
+    """
+    Model used for Final Step
+    """
     GENDER_CHOICES = [
         (1, 'Hombre'),
         (2, 'Mujer'),

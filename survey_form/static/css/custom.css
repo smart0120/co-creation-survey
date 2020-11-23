@@ -134,6 +134,7 @@ body {
   position: absolute;
   opacity: 1;
   font-size: 22px;
+  color: rgb(224, 69, 0)
 }
 .form-check-radio input[type="radio"]:checked+.form-check-sign::after {
   opacity: 1;
@@ -169,4 +170,9 @@ body {
 .virtical-radio .form-check-sign:before, .virtical-radio .form-check-sign:after {
   top: 40px;
   left: 20%;
+}
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  border-color: rgb(224, 69, 0);
+  background-color: rgb(224, 69, 0);
 }
