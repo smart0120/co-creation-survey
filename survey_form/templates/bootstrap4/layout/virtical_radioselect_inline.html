@@ -1,5 +1,15 @@
 {% if field.is_hidden %}
     {{ field }}
 {% else %}
+
+<div class="flex-grow-1 {% if field.errors %}is-invalid{% endif %}">
+    <div class="d-flex">
     {% include 'bootstrap4/layout/virtical_radioselect.html' %}
+    </div>
+    {% if field.errors %}
+    <div class="mt-5 pt-2 text-center vertical-inline-radios">
+        {% include 'bootstrap4/layout/field_errors_block.html' %}
+    </div>
+    {% endif %}
+</div>
 {% endif %}

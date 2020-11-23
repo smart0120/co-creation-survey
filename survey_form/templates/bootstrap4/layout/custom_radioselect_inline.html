@@ -11,5 +11,9 @@
 
         {% include 'bootstrap4/layout/custom_radioselect.html' %}
     	</div>
+        
+        {% if field.errors %}
+            {% include 'bootstrap4/layout/field_errors_block.html' %}
+        {% endif %}
     </div>
 {% endif %}

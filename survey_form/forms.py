@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm, Field
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, HTML
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, HTML, Hidden
 from crispy_forms.bootstrap import InlineRadios
 
 from .models import BusinessCreator, SecondStep, ThirdStep, FourthStep, FifthStep
@@ -23,6 +23,13 @@ class VirticalInlineRadio(InlineRadios):
 	Customized bootstrap4 inline radio with label above control
 	"""
 	template = '%s/layout/virtical_radioselect_inline.html'
+
+
+class CustomHidden(InlineRadios):
+	"""
+	Customized bootstrap4 hidden field
+	"""
+	template = "%s/layout/hidden_field.html"
 
 
 class StepFirstForm(ModelForm):
@@ -428,6 +435,9 @@ class StepThirdForm(ModelForm):
 		label='¿A que le darías más prioridad? ¿A alcanzar tus objetivos o a disfrutar el proceso?'
 	)
 
+	learning_group = forms.CharField(required=False);
+	exp_group = forms.CharField(required=False);
+
 	class Meta:
 		model = ThirdStep
 		fields = '__all__'
@@ -536,6 +546,7 @@ class StepThirdForm(ModelForm):
 						'learning_not_clear',
 						css_class='font-size-14px mt-3'
 					),
+					CustomHidden('learning_group'),
 					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
@@ -556,6 +567,7 @@ class StepThirdForm(ModelForm):
 						'exp_other',
 						css_class='font-size-14px mt-3'
 					),
+					CustomHidden('exp_group'),
 					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
@@ -622,6 +634,29 @@ class StepThirdForm(ModelForm):
 			)
 		)
 
+	def clean(self):
+		cleaned_data = super().clean()
+		msg = "Esta pergunta é obrigatória"
+		
+		learning_visual = cleaned_data.get("learning_visual")
+		learning_auditory = cleaned_data.get("learning_auditory")
+		learning_kinesthetic = cleaned_data.get("learning_kinesthetic")
+		learning_not_clear = cleaned_data.get("learning_not_clear")
+
+		if not (learning_visual or learning_auditory or learning_kinesthetic or learning_not_clear):
+			self.add_error('learning_group', msg)
+
+		exp_finace = cleaned_data.get("exp_finace")
+		exp_Sales = cleaned_data.get("exp_Sales")
+		exp_marketing = cleaned_data.get("exp_marketing")
+		exp_technology = cleaned_data.get("exp_technology")
+		exp_operations = cleaned_data.get("exp_operations")
+		exp_human_resources = cleaned_data.get("exp_human_resources")
+		exp_legal = cleaned_data.get("exp_legal")
+		exp_other = cleaned_data.get("exp_other")
+
+		if not (exp_finace or exp_Sales or exp_marketing or exp_technology or exp_operations or exp_human_resources or exp_legal or exp_other):
+			self.add_error('exp_group', msg)
 
 
 class StepFourthForm(ModelForm):

@@ -176,3 +176,14 @@ body {
   border-color: rgb(224, 69, 0);
   background-color: rgb(224, 69, 0);
 }
+.vertical-inline-radios .invalid-feedback {
+  font-size: 90%;
+  display: block;
+}
+.custom-inline-radioselect .invalid-feedback {
+  display: block;
+  padding-bottom: 5px;
+}
+/*.feedback-icon:before {
+  content: url(//ssl.gstatic.com/docs/forms/qp_sprite134.svg);
+}*/
