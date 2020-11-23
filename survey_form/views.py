@@ -223,5 +223,6 @@ class SuccessView(TemplateView):
 	def get(self, request, *args, **kwargs):
 		if self.request.session.get('step5', False):
 			context = self.get_context_data(**kwargs)
+			self.request.session.clear()
 			return self.render_to_response(context)
 		return HttpResponseRedirect('/step1/')
