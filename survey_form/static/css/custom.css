@@ -184,6 +184,19 @@ body {
   display: block;
   padding-bottom: 5px;
 }
-/*.feedback-icon:before {
-  content: url(//ssl.gstatic.com/docs/forms/qp_sprite134.svg);
-}*/
+.custom-radio {
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+.detail-input-container input {
+  position: absolute;
+  width: 80%;
+  right: 25px;
+  bottom: 30px;
+}
+.detail-input-container input.is-invalid {
+  border-color: #ced4da;
+  padding-right: 0.75rem;
+  background-image: none;
+  bottom: 65px;
+}

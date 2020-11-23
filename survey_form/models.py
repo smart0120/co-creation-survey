@@ -38,11 +38,11 @@ class SecondStep(models.Model):
     market = models.IntegerField(
         choices=MARKET_CHOICES
     )
-    industry = models.TextField()
+    industry = models.CharField(max_length=256)
     classification = models.IntegerField(
         choices=CLASSIFICATION_CHOICES
     )
-    classification_other_detail = models.TextField(blank=True)
+    classification_other_detail = models.CharField(blank=True, max_length=256)
     time_spend = models.IntegerField(
         choices=TIME_SPEND_CHOICE
     )
@@ -138,7 +138,7 @@ class ThirdStep(models.Model):
     exp_legal = models.BooleanField(default=False);
     exp_other = models.BooleanField(default=False);
 
-    exp_other_detail = models.TextField(blank=True)
+    exp_other_detail = models.CharField(blank=True, max_length=256)
 
     motivate1 = models.IntegerField(choices=MOTIVATE_CHOICES)
     motivate2 = models.IntegerField(choices=MOTIVATE_CHOICES)

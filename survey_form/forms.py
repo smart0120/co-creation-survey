@@ -71,6 +71,7 @@ class StepSecondForm(ModelForm):
 	classification = forms.ChoiceField(
 		widget=forms.RadioSelect,
 		choices=SecondStep.CLASSIFICATION_CHOICES,
+		required=False,
 		label='¿Cuál de las siguientes clasificaciones aplica mejor para tu proyecto de emprendimiento?',
 	)
 	time_spend = forms.ChoiceField(
@@ -97,28 +98,32 @@ class StepSecondForm(ModelForm):
 			Div(
 				Div(
 					'consists',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
 			Div(
 				Div(
 					'market',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
 			Div(
 				Div(
 					'industry',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
 			Div(
 				Div(
 					'classification',
-					css_class='block-body pt-4 radio-box'
+					Div(
+						'classification_other_detail',
+						css_class='detail-input-container'
+					),
+					css_class='block-body position-relative pt-4'
 				),
 				css_class='block-content mb-2'
 			),
@@ -146,6 +151,15 @@ class StepSecondForm(ModelForm):
 				HTML('<input type="submit" class="btn button" value="Próxima">')
 			)
 		)
+
+	def clean(self):
+		cleaned_data = super().clean()
+		msg = "Esta pergunta é obrigatória"
+		classification = cleaned_data.get("classification")
+		classification_other_detail = cleaned_data.get("classification_other_detail")
+
+		if (not classification) or (classification == '6' and classification_other_detail == ''):
+			self.add_error('classification_other_detail', msg)
 
 
 class StepThirdForm(ModelForm):
@@ -436,7 +450,6 @@ class StepThirdForm(ModelForm):
 	)
 
 	learning_group = forms.CharField(required=False);
-	exp_group = forms.CharField(required=False);
 
 	class Meta:
 		model = ThirdStep
@@ -530,7 +543,7 @@ class StepThirdForm(ModelForm):
 					CustomInlineRadios('trait48'),
 					CustomInlineRadios('trait49'),
 					CustomInlineRadios('trait50'),
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
@@ -565,10 +578,13 @@ class StepThirdForm(ModelForm):
 						'exp_human_resources',
 						'exp_legal',
 						'exp_other',
+						Div(
+							'exp_other_detail',
+							css_class='detail-input-container'
+						),
 						css_class='font-size-14px mt-3'
 					),
-					CustomHidden('exp_group'),
-					css_class='block-body pt-4'
+					css_class='block-body position-relative pt-4'
 				),
 				css_class='block-content mb-2'
 			),
@@ -655,8 +671,8 @@ class StepThirdForm(ModelForm):
 		exp_legal = cleaned_data.get("exp_legal")
 		exp_other = cleaned_data.get("exp_other")
 
-		if not (exp_finace or exp_Sales or exp_marketing or exp_technology or exp_operations or exp_human_resources or exp_legal or exp_other):
-			self.add_error('exp_group', msg)
+		if not (exp_finace or exp_Sales or exp_marketing or exp_technology or exp_operations or exp_human_resources or exp_legal) or exp_other and exp_other_detail == '':
+			self.add_error('exp_other_detail', msg)
 
 
 class StepFourthForm(ModelForm):
@@ -688,7 +704,7 @@ class StepFourthForm(ModelForm):
 			Div(
 				Div(
 					'goals',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
@@ -714,21 +730,21 @@ class StepFourthForm(ModelForm):
 			Div(
 				Div(
 					'objective',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
 			Div(
 				Div(
 					'measure',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
 			Div(
 				Div(
 					'obstacle',
-					css_class='block-body pt-4 radio-box'
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),
