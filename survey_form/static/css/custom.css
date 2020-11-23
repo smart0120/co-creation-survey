@@ -160,3 +160,13 @@ body {
   flex-grow: 1.8;
   min-height: 65px;
 }
+.virtical-radio {
+  text-align: center;
+}
+.virtical-radio .form-check-label {
+  padding: 0;
+}
+.virtical-radio .form-check-sign:before, .virtical-radio .form-check-sign:after {
+  top: 40px;
+  left: 20%;
+}

@@ -16,7 +16,7 @@ class CustomInlineRadios(InlineRadios):
 
 
 class VirticalInlineRadio(InlineRadios):
-	template = '%s/layout/custom_radioselect_inline.html'
+	template = '%s/layout/virtical_radioselect_inline.html'
 
 
 class StepFirstForm(ModelForm):
@@ -105,7 +105,19 @@ class StepSecondForm(ModelForm):
 			),
 			Div(
 				Div(
-					'time_spend',
+					HTML("""
+						¿Cuánto tiempo quieres dedicarle a definir tu producto o servicio y su propuesta de valor? <span class="asteriskField">*</span>
+					"""),
+					Div(
+						HTML("""
+							<div class="flex-grow text-center pr-1 mt-4 pt-2" style="max-width: 35%">Mínimo indispensable. Quiero empezar a vender ya con lo que tengo pensado y/o definido.</div>
+						"""),
+						VirticalInlineRadio('time_spend'),
+						HTML("""
+							<div class="flex-grow text-center pl-1 mt-4 pt-2" style="max-width: 35%">Lo que sea necesario. Prefiero tomarme el tiempo para definir y evaluar mi producto o servicio hasta que me sienta completamente seguro</div>
+						"""),
+						css_class='font-size-14px mt-4 d-flex'
+					),
 					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
@@ -613,7 +625,19 @@ class StepThirdForm(ModelForm):
 			),
 			Div(
 				Div(
-					'priority',
+					HTML("""
+						¿A que le darías más prioridad? ¿A alcanzar tus objetivos o a disfrutar el proceso? <span class="asteriskField">*</span>
+					"""),
+					Div(
+						HTML("""
+							<div class="flex-grow text-center pr-1 mt-4 pt-3" style="max-width: 35%">Disfrutar la experiencia de emprender</div>
+						"""),
+						VirticalInlineRadio('priority'),
+						HTML("""
+							<div class="flex-grow text-center pl-1 mt-4 pt-3" style="max-width: 35%">Lograr mis objetivos</div>
+						"""),
+						css_class='font-size-14px mt-4 d-flex'
+					),
 					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
@@ -672,8 +696,20 @@ class StepFourthForm(ModelForm):
 			),
 			Div(
 				Div(
-					'dedicate',
-					css_class='block-body pt-4 radio-box'
+					HTML("""
+						¿Cuánto tiempo te es posible dedicarle a tu proyecto de emprendimiento? <span class="asteriskField">*</span>
+					"""),
+					Div(
+						HTML("""
+							<div class="flex-grow text-center pr-1 mt-4 pt-2" style="max-width: 35%">Este es un proyecto alternativo al que le puedo dedicar nada más unas pocas horas a la semana.</div>
+						"""),
+						VirticalInlineRadio('dedicate'),
+						HTML("""
+							<div class="flex-grow text-center pl-1 mt-4 pt-2" style="max-width: 35%">Lo que sea necesario. Estoy tiempo completo en este proyecto y dispuesto a sacrificar otras áreas de mi vida.</div>
+						"""),
+						css_class='font-size-14px mt-4 d-flex'
+					),
+					css_class='block-body pt-4'
 				),
 				css_class='block-content mb-2'
 			),

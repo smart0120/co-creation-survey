@@ -2,9 +2,10 @@
 {% load l10n %}
 
 {% for choice in field.field.choices %}
-	<div class="form-check-radio col">
+	<div class="form-check-radio virtical-radio flex-grow-1">
 		<label class="form-check-label">
 			<input class="form-check-input" type="radio" name="{{ field.html_name }}" id="id_{{ field.html_name }}_{{ forloop.counter }}" value="{{ choice.0|unlocalize }}" {% if choice.0|stringformat:"s" == field.value|default_if_none:""|stringformat:"s" %} checked="checked"{% endif %} {% if field.field.disabled %}disabled="true"{% endif %} {{ field.field.widget.attrs|flatatt }}>
+			{{ choice.1|unlocalize }}
 			<span class="form-check-sign"></span>
 		</label>
 	</div>
