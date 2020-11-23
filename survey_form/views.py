@@ -86,7 +86,7 @@ class StepSecondView(CreateView):
 		return self.render_to_response(self.get_context_data(form=form))
 
 
-class StepThirdView(FormView):
+class StepThirdView(CreateView):
 	"""
 	Step3 View
 	"""
@@ -103,6 +103,8 @@ class StepThirdView(FormView):
 		return None
 
 	def get(self, request, *args, **kwargs):
+		self.object = self.get_object()
+		return self.render_to_response(self.get_context_data())
 		if self.request.session.get('step2', False):
 			self.object = self.get_object()
 			return self.render_to_response(self.get_context_data())
@@ -128,7 +130,7 @@ class StepThirdView(FormView):
 		return self.render_to_response(self.get_context_data(form=form))
 
 
-class StepFourthView(FormView):
+class StepFourthView(CreateView):
 	"""
 	Step4 View
 	"""
@@ -170,7 +172,7 @@ class StepFourthView(FormView):
 		return self.render_to_response(self.get_context_data(form=form))
 
 
-class StepFifthView(FormView):
+class StepFifthView(CreateView):
 	"""
 	Step5 View
 	"""
