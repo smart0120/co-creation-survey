@@ -9,6 +9,11 @@ class BusinessCreator(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
+
 
 class SecondStep(models.Model):
     """
@@ -46,6 +51,11 @@ class SecondStep(models.Model):
     time_spend = models.IntegerField(
         choices=TIME_SPEND_CHOICE
     )
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
 
 
 class ThirdStep(models.Model):
@@ -150,6 +160,11 @@ class ThirdStep(models.Model):
 
     undertake = models.TextField()
     diff_undertake = models.TextField()
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
     
 
 class FourthStep(models.Model):
@@ -170,6 +185,11 @@ class FourthStep(models.Model):
     measure = models.TextField()
     obstacle = models.TextField()
 
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
+
 
 class FifthStep(models.Model):
     """
@@ -189,3 +209,8 @@ class FifthStep(models.Model):
     )
     age = models.IntegerField(blank=True)
     more = models.TextField(blank=True)
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
